@@ -1,0 +1,142 @@
+{
+  "config": {
+    "model_name": "gpt2",
+    "device": "cpu",
+    "n_prompts": 100,
+    "max_tokens": 400,
+    "seed": 42,
+    "output_json": "research_final/results/results.json"
+  },
+  "summary": {
+    "baseline": {
+      "clean": {
+        "auc": 0.9801,
+        "accuracy": 0.955
+      },
+      "attacked": {
+        "auc_mean": 0.52415,
+        "auc_ci_low": 0.4865,
+        "auc_ci_high": 0.58065,
+        "accuracy_mean": 0.5083333333333334,
+        "accuracy_ci_low": 0.49,
+        "accuracy_ci_high": 0.535,
+        "auc_by_attack": {
+          "paraphrase": 0.5053,
+          "shuffle": 0.58065,
+          "deletion": 0.4865
+        },
+        "accuracy_by_attack": {
+          "paraphrase": 0.5,
+          "shuffle": 0.535,
+          "deletion": 0.49
+        }
+      },
+      "calibration": {
+        "mean_p_value": 0.024209862818268507,
+        "brier_proxy": 0.022634532238935096
+      },
+      "efficiency": {
+        "mean_latency_sec": 107.34576786447316,
+        "p95_latency_sec": 157.31335789859295,
+        "mean_tokens_per_sec": 3.6449935373105062
+      }
+    },
+    "multibit": {
+      "clean": {
+        "auc": 0.9725,
+        "accuracy": 0.915
+      },
+      "attacked": {
+        "auc_mean": 0.4705,
+        "auc_ci_low": 0.409,
+        "auc_ci_high": 0.5153,
+        "accuracy_mean": 0.5,
+        "accuracy_ci_low": 0.49499999999999994,
+        "accuracy_ci_high": 0.505,
+        "auc_by_attack": {
+          "paraphrase": 0.409,
+          "shuffle": 0.5153,
+          "deletion": 0.4872
+        },
+        "accuracy_by_attack": {
+          "paraphrase": 0.495,
+          "shuffle": 0.505,
+          "deletion": 0.5
+        }
+      },
+      "calibration": {
+        "mean_p_value": 0.022673199857270024,
+        "brier_proxy": 0.13109084683080732
+      },
+      "efficiency": {
+        "mean_latency_sec": 105.0828746946156,
+        "p95_latency_sec": 158.70035871062427,
+        "mean_tokens_per_sec": 3.5954959155164046
+      }
+    },
+    "pcm": {
+      "clean": {
+        "auc": 0.9994,
+        "accuracy": 0.93
+      },
+      "attacked": {
+        "auc_mean": 0.6583666666666667,
+        "auc_ci_low": 0.5676,
+        "auc_ci_high": 0.7091499999999998,
+        "accuracy_mean": 0.5883333333333334,
+        "accuracy_ci_low": 0.55,
+        "accuracy_ci_high": 0.63,
+        "auc_by_attack": {
+          "paraphrase": 0.5676,
+          "shuffle": 0.70915,
+          "deletion": 0.69835
+        },
+        "accuracy_by_attack": {
+          "paraphrase": 0.55,
+          "shuffle": 0.63,
+          "deletion": 0.585
+        }
+      },
+      "calibration": {
+        "mean_p_value": 0.004436466081262339,
+        "brier_proxy": 0.0018808627828971096
+      },
+      "efficiency": {
+        "mean_latency_sec": 89.48625882219523,
+        "p95_latency_sec": 134.45986737888305,
+        "mean_tokens_per_sec": 4.168936234087911
+      }
+    }
+  },
+  "quality": {
+    "plain": {
+      "distinct_1": 0.20041384499623777,
+      "distinct_2": 0.516880664652568,
+      "mean_perplexity": 17.239481656123395,
+      "bleu_vs_plain": 1.0
+    },
+    "baseline": {
+      "distinct_1": 0.24396291504959033,
+      "distinct_2": 0.6559795152914022,
+      "mean_perplexity": 11.708248185379993,
+      "bleu_vs_plain": 0.017607801806272676
+    },
+    "multibit": {
+      "distinct_1": 0.22056883154962614,
+      "distinct_2": 0.5918187168922896,
+      "mean_perplexity": 11.448574173885657,
+      "bleu_vs_plain": 0.03693977559467274
+    },
+    "pcm": {
+      "distinct_1": 0.2803614137656125,
+      "distinct_2": 0.7255821043405358,
+      "mean_perplexity": 18.14595996566106,
+      "bleu_vs_plain": 0.018548285780841216
+    }
+  },
+  "attacks": {
+    "paraphrase": 0.3,
+    "shuffle": 0.5,
+    "deletion": 0.1
+  }
+}
