@@ -1,0 +1,142 @@
+{
+  "config": {
+    "model_name": "gpt2",
+    "device": "cpu",
+    "n_prompts": 80,
+    "max_tokens": 600,
+    "seed": 42,
+    "output_json": "research_final/results/results_80p_600t.json"
+  },
+  "summary": {
+    "baseline": {
+      "clean": {
+        "auc": 0.99,
+        "accuracy": 0.90625
+      },
+      "attacked": {
+        "auc_mean": 0.9562239583333333,
+        "auc_ci_low": 0.91390625,
+        "auc_ci_high": 0.98625,
+        "accuracy_mean": 0.9166666666666666,
+        "accuracy_ci_low": 0.8874999999999998,
+        "accuracy_ci_high": 0.9375,
+        "auc_by_attack": {
+          "paraphrase": 0.968515625,
+          "shuffle": 0.91390625,
+          "deletion": 0.98625
+        },
+        "accuracy_by_attack": {
+          "paraphrase": 0.9375,
+          "shuffle": 0.8875,
+          "deletion": 0.925
+        }
+      },
+      "calibration": {
+        "mean_p_value": 0.004868694656484951,
+        "brier_proxy": 0.004671886287688782
+      },
+      "efficiency": {
+        "mean_latency_sec": 137.26055625118315,
+        "p95_latency_sec": 224.6496784886345,
+        "mean_tokens_per_sec": 3.875029591050862
+      }
+    },
+    "multibit": {
+      "clean": {
+        "auc": 0.9165625,
+        "accuracy": 0.86875
+      },
+      "attacked": {
+        "auc_mean": 0.8253645833333333,
+        "auc_ci_low": 0.82328125,
+        "auc_ci_high": 0.8268749999999999,
+        "accuracy_mean": 0.7354166666666666,
+        "accuracy_ci_low": 0.71875,
+        "accuracy_ci_high": 0.7687500000000002,
+        "auc_by_attack": {
+          "paraphrase": 0.825,
+          "shuffle": 0.82328125,
+          "deletion": 0.8278125
+        },
+        "accuracy_by_attack": {
+          "paraphrase": 0.71875,
+          "shuffle": 0.71875,
+          "deletion": 0.76875
+        }
+      },
+      "calibration": {
+        "mean_p_value": 0.007299363480475121,
+        "brier_proxy": 0.026802670085980466
+      },
+      "efficiency": {
+        "mean_latency_sec": 140.87062300280667,
+        "p95_latency_sec": 237.61818387210369,
+        "mean_tokens_per_sec": 3.800591052517241
+      }
+    },
+    "pcm": {
+      "clean": {
+        "auc": 0.9909375,
+        "accuracy": 0.95625
+      },
+      "attacked": {
+        "auc_mean": 0.7048958333333332,
+        "auc_ci_low": 0.646640625,
+        "auc_ci_high": 0.751484375,
+        "accuracy_mean": 0.59375,
+        "accuracy_ci_low": 0.5375,
+        "accuracy_ci_high": 0.63125,
+        "auc_by_attack": {
+          "paraphrase": 0.646640625,
+          "shuffle": 0.751484375,
+          "deletion": 0.7165625
+        },
+        "accuracy_by_attack": {
+          "paraphrase": 0.5375,
+          "shuffle": 0.63125,
+          "deletion": 0.6125
+        }
+      },
+      "calibration": {
+        "mean_p_value": 0.01787497234313114,
+        "brier_proxy": 0.006140888769771033
+      },
+      "efficiency": {
+        "mean_latency_sec": 111.88120351489633,
+        "p95_latency_sec": 201.4028958654031,
+        "mean_tokens_per_sec": 4.5478727581587055
+      }
+    }
+  },
+  "quality": {
+    "plain": {
+      "distinct_1": 0.16767980547734834,
+      "distinct_2": 0.45307287657172185,
+      "mean_perplexity": 19.02442832739945,
+      "bleu_vs_plain": 1.0
+    },
+    "baseline": {
+      "distinct_1": 0.19465396321291517,
+      "distinct_2": 0.5220578479501128,
+      "mean_perplexity": 8.490701913603663,
+      "bleu_vs_plain": 0.016095818558233627
+    },
+    "multibit": {
+      "distinct_1": 0.21027530177942966,
+      "distinct_2": 0.5769547867955017,
+      "mean_perplexity": 11.241052908677142,
+      "bleu_vs_plain": 0.00972059192911675
+    },
+    "pcm": {
+      "distinct_1": 0.2533813301646105,
+      "distinct_2": 0.6916552763466863,
+      "mean_perplexity": 18.238697878426763,
+      "bleu_vs_plain": 0.01228489142882748
+    }
+  },
+  "attacks": {
+    "paraphrase": 0.2,
+    "shuffle": 0.5,
+    "deletion": 0.1
+  }
+}
