@@ -1,4 +1,4 @@
-# research_final
+# Phung Nguyen Hanh BT4101 Dissertation Code Release
 
 Benchmark suite for comparing three language-model watermarking methods:
 - Baseline watermark
